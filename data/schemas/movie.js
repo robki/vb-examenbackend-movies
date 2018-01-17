@@ -8,5 +8,6 @@ module.exports = new mongoose.Schema({
     Plot: {type:String},
     Actors:{type: String},
     Released: {type:String},
-    Year:{type:String}
+    Year:{type:String},
+    Vote: {type:String}
 });

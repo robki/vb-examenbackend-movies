@@ -16,4 +16,12 @@ Movie.getMovies = function (callback) {
     });
 };
 
+Movie.saveVote = function(values,callback){
+    console.log(values.Title);
+    Movie.findOneAndUpdate({Title:values.Title},{$set:{Vote:values.firstName}},function(err,result){
+        if(err) callback(err,null);
+        callback(null,result);
+    });
+}
+
 module.exports = Movie;

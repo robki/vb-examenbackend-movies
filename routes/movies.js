@@ -17,9 +17,20 @@ router.get('/', function(req,res,next){
         });
         
     });
+});
 
+router.post('/savevote',function(req,res,next){
+    let values= {};
+
+    values.Title = req.body.title;
+    values.firstName = req.body.firstname;
+    console.log(values);
     
-    
+
+    Movie.saveVote(values,function(err,resultres){
+        if(err) console.error(err);
+        res.redirect("/movies");
+    });
 });
 
 
