@@ -1,0 +1,18 @@
+extends ../layout
+
+block content   
+
+    h1= title
+
+    -for(var movie in movies){  
+        div.col-md-4(style="word-wrap: break word; background-color: #eff2ea; padding-left:15px; border: 1px solid #000; width:"+movies[movie].Metascore /2 +"%")
+            h2= movies[movie].Title
+            p= movies[movie].Metascore +" " + " "
+                button(type="submit" value="1") STEM
+        br 
+        img(src=movies[movie].Poster, alt="", srcset="")
+        div
+            p=movies[movie].Plot
+            p= movies[movie].Actors
+            p= movies[movie].Released
+    -};
