@@ -2,6 +2,7 @@ var express = require("express");
 var router = express.Router();
 var Movie = require("../data/models/movie");
 var User = require('../data/models/user');
+var date = "vandaag";
 
 router.get('/', function(req,res,next){
     Movie.getMovies(function(err,results){
@@ -24,6 +25,9 @@ router.post('/savevote',function(req,res,next){
 
     values.Title = req.body.title;
     values.firstName = req.body.firstname;
+    values.lastName = req.body.lastname;
+    values.date = date;
+    
     console.log(values);
     
 

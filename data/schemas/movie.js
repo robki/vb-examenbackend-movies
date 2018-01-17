@@ -9,5 +9,13 @@ module.exports = new mongoose.Schema({
     Actors:{type: String},
     Released: {type:String},
     Year:{type:String},
-    Vote: {type:String}
+    Voters: [
+        {
+            firstName:{type:String},
+            lastName:{type:String},
+            date:{
+                type:String
+            }
+        }
+    ]
 });
