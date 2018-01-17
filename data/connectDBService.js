@@ -15,6 +15,9 @@ module.exports = (configURL, database) => {
 
 
     });
+
+    
+    
     database.connection.on("error", (error) => {
         console.log("connection error met mongodb " + configURL + ":" + error.message);
 
@@ -23,6 +26,8 @@ module.exports = (configURL, database) => {
         console.log("connection closed", configURL);
 
     });
+
+
 
     return database; //voor gebruik in andere modules
 }

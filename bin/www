@@ -28,7 +28,6 @@ const DBService = require("../data/connectDBService.js");
 DBService (config.MONGODBURL,require('mongoose') ); 
 
 
-
 /**
  * Listen on provided port, on all network interfaces.
  */

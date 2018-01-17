@@ -3,6 +3,7 @@ extends ../layout
 block content   
 
     h1= title
+    h2= "Welcome back: " + users.firstName + " " + users.lastName
 
     -for(var movie in movies){  
         div.col-md-4(style="word-wrap: break word; background-color: #eff2ea; padding-left:15px; border: 1px solid #000; width:"+movies[movie].Metascore /2 +"%")
