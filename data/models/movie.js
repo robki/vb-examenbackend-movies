@@ -19,20 +19,23 @@ Movie.getMovies = function (callback) {
 
 Movie.saveVote = function(values,callback){
     console.log(values.Title);
-    Movie.findOneAndUpdate({Title:values.Title},
-        { 
-            "$set":{
-            "Voters.0.firstName": values.firstName, 
-            "Voters.0.lastName": values.lastName, 
-            "Voters.0.date": values.date
+    Movie.findOneAndUpdate({
+        Title: values.Title
+    }, {
+        $push: {
+            Voters:{
+                firstName: values.firstName,
+                lastName: values.lastName,
+                date: Date.now()
+            }
+         
         }
     },
-        function(err,result){
-        
-        
-        if(err) callback(err,null);
-        callback(null,result);
+    function (err, result) {
+        if (err) callback(err, null);
+        callback(null, result);
+
     });
-}
+};
 
 module.exports = Movie;

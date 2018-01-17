@@ -14,7 +14,8 @@ module.exports = new mongoose.Schema({
             firstName:{type:String},
             lastName:{type:String},
             date:{
-                type:String
+                type: Date,
+                default: Date.now
             }
         }
     ]
